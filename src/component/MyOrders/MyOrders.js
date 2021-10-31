@@ -35,7 +35,9 @@ const MyOrders = () => {
         <div className="row justify-content-center main-div" style={{ marginBottom: '2%' }}>
             {
                 //orders.map(order => <Order key={order._id} order={ order }></Order>)
-                orders ? 
+                orders.length === 0 ?
+                    <h3> No orders placed yet </h3>
+                    :
                     orders.map(order =>
                         <div className="col-md-3 resort" key={ order._id}>
                             <img src={order.item.image} alt="" />
@@ -52,8 +54,7 @@ const MyOrders = () => {
                         </div>
                     )
                 
-                    :
-                    <h3> No orders placed yet </h3>
+                    
             }
         </div>
     );

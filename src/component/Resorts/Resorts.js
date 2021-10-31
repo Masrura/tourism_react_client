@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Resort from '../Resort/Resort';
 
 const Resorts = () => {
@@ -13,7 +14,9 @@ const Resorts = () => {
     return (
         <div className="row justify-content-center">
             {
-                resorts.map(resort => <Resort key ={resort._id } resort={ resort}></Resort>)
+                resorts.length === 0 ?
+                    <Spinner animation="grow" variant="success" />
+                : resorts.map(resort => <Resort key ={resort._id } resort={ resort}></Resort>)
             }
         </div>
     );
