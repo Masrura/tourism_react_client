@@ -1,0 +1,24 @@
+.services{
+    padding: 3%;
+}
+.services img{
+    width: 600px;
+    height: 400px;
+}
+.services h2{
+    color:midnightblue;
+}
+.services h1{
+    color: blue;
+}
+.list li{
+    list-style: none;
+}
+.animate-right{
+    animation: backInRight; 
+  animation-duration: 2s;
+}
+.animate-left{
+    animation: backInLeft; 
+  animation-duration: 2s;
+}

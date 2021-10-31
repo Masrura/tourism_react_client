@@ -9,6 +9,12 @@ import Login from './component/Login/Login';
 import Private from './component/Private/Private'
 import PrivateRoute from './component/PrivareRoute/PrivateRoute';
 import Register from './component/Register/Register';
+import { Placeholder } from 'react-bootstrap';
+import PlaceOrder from './component/PlaceOrder/PlaceOrder';
+import MyOrders from './component/MyOrders/MyOrders';
+import ManageOrders from './component/ManageOrders/ManageOrders';
+import AddOrders from './component/AddOrders/AddOrders';
+import Footer from './component/Footer/Footer';
 
 function App() {
   return (
@@ -26,6 +32,18 @@ function App() {
             <PrivateRoute path="/private">
               <Private></Private>
             </PrivateRoute>
+            <PrivateRoute path="/booking/:serviceId">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <PrivateRoute path="/my-orders">
+              <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/manage-orders">
+              <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/add-service">
+              <AddOrders></AddOrders>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
@@ -36,6 +54,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+        <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>
