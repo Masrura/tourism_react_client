@@ -61,7 +61,7 @@ const PlaceOrder = () => {
                             <input placeholder="Address"
                                 {...register("address", { required: true })} />
                             <input placeholder="Booking Date"
-                                {...register("date")}
+                                {...register("date", { required: true })}
                                 type="date"
                                 className="p-2 m-2 w-100"
                             />
