@@ -2,7 +2,7 @@ import React from 'react';
 import './Gallery.css'
 const Gallery = () => {
     return (
-        <div style={{ marginTop: '2%', borderTop: '1px solid grey'}}>
+        <div style={{ borderTop: '1px solid grey', paddingTop: '2%'}}>
             <h1 style={{ marginTop: '2%', }}>Gallery</h1>
             <div className="row gallery" style={{ marginTop: '2%', }}>
                 <div className="col-md-3 my-3">
