@@ -11,7 +11,7 @@ const Footer = () => {
                 <li class="list-inline-item">Terms</li>
                 <li class="list-inline-item">Privacy Policy</li>
             </ul>
-            <p class="copyright">Company Name © 2021</p>
+            <p class="copyright">GreenLand Resort © 2021</p>
         </div>
     );
 };

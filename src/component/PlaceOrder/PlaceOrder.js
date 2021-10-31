@@ -40,7 +40,7 @@ const PlaceOrder = () => {
             <div className="row detail_main">
                 <div className="col-md-7 detail">
                     <img src={resort?.image} alt="" />
-                    <h2>Room Type : {resort?.title}</h2>
+                    <h2 style={{ color: 'white' }}>Room Type : {resort?.title}</h2>
                     <div className="d-flex justify-content-evenly p-5">
                         <p> <i className="fas fa-user fa-2x text-start"></i> Guest Number: <span>{resort?.guest}</span></p>
                         
