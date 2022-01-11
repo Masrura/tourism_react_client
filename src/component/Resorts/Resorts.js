@@ -6,7 +6,7 @@ const Resorts = () => {
     const [resorts, setResorts] = useState([]);
 
     useEffect(() => {
-        fetch('https://damp-gorge-65015.herokuapp.com/resorts')
+        fetch('https://secret-scrubland-17703.herokuapp.com/resorts')
             .then(res => res.json())
             .then(data => setResorts(data))
     },[])

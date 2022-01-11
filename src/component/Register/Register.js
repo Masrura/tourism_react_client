@@ -7,7 +7,7 @@ import useAuth from "../../hooks/useAuth";
 initializeAuthentication();
 const Register = () => {
 
-    const { registerNewUser, setUserName, logOut } = useAuth();
+    const { registerNewUser, setUserName, user, saveUser, logOut } = useAuth();
     const { signInWithGoogle } = useAuth();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -30,7 +30,9 @@ const Register = () => {
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then(result => {
+                const user = result.user;
                 history.push('/home');
+                saveUser(user.email, user.displayName, 'POST')
             })
     }
     const handleRegistration = e => {
@@ -47,8 +49,10 @@ const Register = () => {
         else {
             registerNewUser(name, email, password)
                 .then(result => {
-                    history.push('/login');
                     setUserName(name);
+                    saveUser(name, email, 'POST')
+                    history.push('/login');
+                    
                     logOut();
 
                 })

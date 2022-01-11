@@ -9,7 +9,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-
+    const [admin, setAdmin] = useState(false);
     const registerNewUser = (name, email, password) => {
         const auth = getAuth();
         return createUserWithEmailAndPassword(auth, email, password)
@@ -68,6 +68,26 @@ const useFirebase = () => {
             setIsLoading(false);
         })
     }, [])
+    
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
+
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        console.log(email, 'and', displayName);
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
     return {
         user,
         error,
@@ -77,6 +97,8 @@ const useFirebase = () => {
         processLogin,
         signInWithGoogle,
         logOut,
+        saveUser,
+        admin
 
     }
 }

@@ -8,7 +8,7 @@ const MyOrders = () => {
     console.log('user is ', user.email);
 
     useEffect(() => {
-        fetch(`https://damp-gorge-65015.herokuapp.com/myOrders/${user.email}`)
+        fetch(`https://secret-scrubland-17703.herokuapp.com/myOrders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [control])
@@ -16,7 +16,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            fetch(`https://damp-gorge-65015.herokuapp.com/deleteOrder/${id}`, {
+            fetch(`https://secret-scrubland-17703.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

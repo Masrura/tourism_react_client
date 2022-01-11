@@ -8,7 +8,7 @@ const Login = () => {
     const history = useHistory();
     const redirect_url = location.state?.from || '/home';
 
-    const { signInWithGoogle } = useAuth();
+    const { signInWithGoogle, saveUser, user } = useAuth();
     const { processLogin } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -27,6 +27,7 @@ const Login = () => {
             processLogin(email, password)
                 .then(result => {
                     history.push(redirect_url);
+                     saveUser(user.email, user.displayName, 'PUT')
                 })
                 .catch(error => {
                     setError('Username or Password is wrong');
@@ -41,6 +42,8 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 history.push(redirect_url);
+                const user = result.user;
+                saveUser(user.email, user.displayName, 'PUT')
             })
             .catch(error => {
                 console.log(error.message);

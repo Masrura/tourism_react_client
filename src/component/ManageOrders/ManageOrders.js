@@ -5,7 +5,7 @@ const ManageOrders = () => {
     const [control, setConrol] = useState(false);
     var pending;
     useEffect(() => {
-        fetch(`https://damp-gorge-65015.herokuapp.com/manageOrders`)
+        fetch(`https://secret-scrubland-17703.herokuapp.com/manageOrders`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [control])
@@ -13,7 +13,7 @@ const ManageOrders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            fetch(`https://damp-gorge-65015.herokuapp.com/deleteOrder/${id}`, {
+            fetch(`https://secret-scrubland-17703.herokuapp.com/deleteOrder/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -31,7 +31,7 @@ const ManageOrders = () => {
     const handleUpdate = (id) => {
         const proceed = window.confirm('Are you sure, you want to Aprove?');
         if (proceed) {
-            fetch(`https://damp-gorge-65015.herokuapp.com/updateOrder/${id}`, {
+            fetch(`https://secret-scrubland-17703.herokuapp.com/updateOrder/${id}`, {
                 method: "PUT",
                 headers: { "content-type": "application/json" },
             })

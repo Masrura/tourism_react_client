@@ -5,7 +5,7 @@ import './AddOrders.css'
 const AddOrders = () => {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch("https://damp-gorge-65015.herokuapp.com/add-service", {
+        fetch("https://secret-scrubland-17703.herokuapp.com/add-service", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

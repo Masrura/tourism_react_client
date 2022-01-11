@@ -13,7 +13,7 @@ const PlaceOrder = () => {
         data.email = user?.email;
         data.item = resort;
         data.status = 'pending';
-        fetch("https://damp-gorge-65015.herokuapp.com/place-order", {
+        fetch("https://secret-scrubland-17703.herokuapp.com/place-order", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -29,7 +29,7 @@ const PlaceOrder = () => {
     };
 
     useEffect(() => {
-        fetch(`https://damp-gorge-65015.herokuapp.com/booking/${serviceId}`)
+        fetch(`https://secret-scrubland-17703.herokuapp.com/booking/${serviceId}`)
             .then(res => res.json())
             .then(data => setResort(data))
     }, [serviceId]);
