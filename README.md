@@ -10,5 +10,6 @@ About Project:
 * Various categories of room are listed.
 * The various other informations are also shown.
 * User can book his/her room and can also check his/her orders on "My Order" tab. In addition can cancel any of his/her order.
+* Customised menu for admin and user
 * Admin can see and manage all orders. He can delete and approve the orders.
 * Beside Admin can also add new services which will be updated in the home page.
